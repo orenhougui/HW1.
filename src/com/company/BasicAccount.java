@@ -2,9 +2,9 @@ package com.company;
 
 public class BasicAccount extends StandardAccount {
 
-    protected double withdrawLimit;
+    protected double withdrawlLimit;
 
-    public BasicAccount(int accountNumber, double withdrawLimit) {
+    public BasicAccount(int accountNumber, double withdrawLimitLimit) {
 
         super(accountNumber,0);
 
@@ -14,25 +14,15 @@ public class BasicAccount extends StandardAccount {
 
 @Override
 public double Withdraw(double amount) {
+
         if (amount > withdrawlLimit) {
 
             balance -= withdrawlLimit;
-            return withdrawLimit;
+            return withdrawlLimit;
         } else {
             balance -= amount;
             return amount;
         }
-}
-
-@Override
-public double Withdraw(double amount) {
-
-    if (amount > withdrawlLimit) {
-
-        balance -= withdrawlLimit;
-        return withdrawlLimit;
-    } else {
-        balance -= amount;
-        return amount;
     }
 }
+

@@ -7,49 +7,47 @@ public class StandardAccount implements IAccount {
     protected double balance;
 
 
-    Public standardAccount(int accountNumber,double creditLimit) {
+    public StandardAccount(int accountNumber,double creditLimit) {
 
         this.accountNumber = accountNumber;
         this.creditLimit = creditLimit;
         this.balance = 0;
 
-
-        return null;
     }
 
 @Override
 public void Deposit(double amount) {
-        //if (amount > creditLimit):
 
     balance += amount;
 }
 
 @Override
 public double Withdraw(double amount) {
-        if ((amount < creditLimit) && (amount <= balance)){
+        if (creditLimit > 0) {
+            return creditLimit = 0;
 
-            balance -= creditLimit;
-                    return balance;
+        } else if ((amount > creditLimit) || (amount == creditLimit))
+    {
 
-        } else if (balance == creditLimit) {
-            return 0;
-
+            balance -= amount;
+                return amount;
         } else {
 
             balance -= creditLimit;
                 return balance;
-        }
+    }
 }
 
 @Override
 public double GetCurrentBalance() {
     return balance;
-        }
+}
 
 
-public int GetAccountNumber() {
-    return accountNumber;
-        }
+    @Override
+ public int GetAccountNumber() {
+        return accountNumber;
+}
 
 }
 

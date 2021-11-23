@@ -1,10 +1,11 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public interface Ibank {
+public interface IBank {
     void OpenAccount(IAccount account);
-    void CloseAccount(int accountNumber);
+    ArrayList<Integer> CloseAccount(int accountNumber);
     List<IAccount> GetAllAccounts();
     List<IAccount> GetAllAccountsInDebt();
     List<IAccount> GetAllAccountsWithBalance(double balanceAbove);
